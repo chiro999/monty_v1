@@ -9,5 +9,5 @@ void _stack(stack_t **head, unsigned int line_counter)
 {
     (void) head;
     (void) line_counter;
-    program.change_ds = 0; // Changed from bus.lifi to program.change_ds
+    program.change_ds = 0;
 }
