@@ -5,7 +5,7 @@
  */
 void stack_free(stack_t *head)
 {
-    stack_t *tmp; // Changed from 'aux'
+    stack_t *tmp;
 
     tmp = head;
     while (head)
