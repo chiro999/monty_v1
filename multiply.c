@@ -25,7 +25,7 @@ void mul_stack2(stack_t **head, unsigned int line_counter)
         fprintf(stderr, "L%d: can't mul, stack too short\n", line_counter);
         fclose(program.file);
         free(program.line_content); // Changed from bus.content to program.line_content
-        free_stack(*head);
+        stack_free(*head);
         exit(EXIT_FAILURE);
     }
 

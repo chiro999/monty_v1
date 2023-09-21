@@ -33,7 +33,7 @@ void _push(stack_t **head, unsigned int line_counter)
             fprintf(stderr, "L%d: usage: push integer\n", line_counter);
             fclose(program.file);
             free(program.line_content);
-            free_stack(*head);
+            stack_free(*head);
             exit(EXIT_FAILURE);
         }
     }
@@ -43,7 +43,7 @@ void _push(stack_t **head, unsigned int line_counter)
         fprintf(stderr, "L%d: usage: push integer\n", line_counter);
         fclose(program.file);
         free(program.line_content);
-        free_stack(*head);
+        stack_free(*head);
         exit(EXIT_FAILURE);
     }
 
