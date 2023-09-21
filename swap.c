@@ -3,10 +3,10 @@
 /**
  * _swap - swaps the top two elements of the stack.
  * @head: stack head
- * @counter: line_number
+ * @line_counter: line_number
  * Return: no return
 */
-void _swap(stack_t **head, unsigned int counter)
+void _swap(stack_t **head, unsigned int line_counter)
 {
 	stack_t *new_node;
 	int len = 0, tmp;
@@ -19,9 +19,9 @@ void _swap(stack_t **head, unsigned int counter)
 	}
 	if (len < 2)
 	{
-		fprintf(stderr, "L%d: can't swap, stack too short\n", counter);
-		fclose(bus.file);
-		free(bus.content);
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_counter);
+		fclose(program.file);
+		free(program.line_content);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
