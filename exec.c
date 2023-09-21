@@ -10,24 +10,27 @@
  */
 int _exec(char *line_content, stack_t **stack, unsigned int line_counter, FILE *file)
 {
-	instruction_t opst[] = {
-		{"push", _push}, {"pall", _print_all}, {"pint", print_int},
-		{"pop", _pop},
-		{"swap", _swap},
-		{"add", add_stack2},
-		{"nop", _nop},
-		{"sub", sub_stack2},
-		{"div", div_stack2},
-		{"mul", mul_stack2},
-		{"mod", mod_stack2},
-		{"pchar",print_char},
-		{"pstr", print_str},
-		{"rotl", rotate_top},
-		{"rotr", rotate_bottom},
-		{"queue", _queue},
-		{"stack", _stack},
-		{NULL, NULL}
-	};
+        instruction_t opst[] = {
+        {"push", _push},
+        {"pall", _print_all},
+        {"pint", print_int},
+        {"pop", _pop},
+        {"swap", _swap},
+        {"add", add_stack2},
+        {"nop", _nop},
+        {"sub", sub_stack2},
+        {"div", div_stack2},
+        {"mul", mul_stack2},
+        {"mod", mod_stack2},
+        {"pchar", print_char},
+        {"pstr", print_str},
+        {"rotl", rotate_top},
+        {"rotr", rotate_bottom},
+        {"queue", _queue},
+        {"stack", _stack},
+        {NULL, NULL}
+    };
+
 	unsigned int i = 0;
 	char *op;
 

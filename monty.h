@@ -8,6 +8,8 @@
 #include <string.h>
 #include <ctype.h>
 
+typedef struct stack_s stack_t;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
