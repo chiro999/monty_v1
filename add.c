@@ -5,7 +5,7 @@
  * @counter: line_number
  * Return: no return
 */
-void add_stack2(stack_t **head, unsigned int counter)
+void add_stack2(stack_t **head, unsigned int line_counter)
 {
 	stack_t *new_node;
 	int len = 0, tmp;
@@ -18,10 +18,10 @@ void add_stack2(stack_t **head, unsigned int counter)
 	}
 	if (len < 2)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", counter);
-		fclose(bus.file);
-		free(bus.content);
-		free_stack(*head);
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_counter);
+		fclose(program.file);
+		free(program.line_content);
+		stack_free(*head);
 		exit(EXIT_FAILURE);
 	}
 	new_node = *head;
