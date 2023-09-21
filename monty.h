@@ -54,3 +54,24 @@ typedef struct program_s
 	int change_ds;
 }  program_t;
 extern program_t program;
+
+
+/* program functions */
+void add_stack2(stack_t **head, unsigned int line_counter);
+void add_node(stack_t **head, int n);
+void div_stack2(stack_t **head, unsigned int line_counter);
+void mod_stack2(stack_t **head, unsigned int line_counter);
+void mul_stack2(stack_t **head, unsigned int line_counter);
+void _nop(stack_t **head, unsigned int line_counter);
+void _pop(stack_t **head, unsigned int line_counter);
+void _print_all(stack_t **head, unsigned int line_counter);
+void print_char(stack_t **head, unsigned int line_counter);
+void print_int(stack_t **head, unsigned int line_counter);
+void print_str(stack_t **head, unsigned int line_counter);
+void _push(stack_t **head, unsigned int line_counter);
+void _queue(stack_t **head, unsigned int counter);
+void _stack(stack_t **head, unsigned int line_counter);
+void stack_free(stack_t *head);
+void sub_stack2(stack_t **head, unsigned int line_counter);
+void _swap(stack_t **head, unsigned int line_counter);
+
