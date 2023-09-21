@@ -1,47 +1,32 @@
 #include "monty.h"
 /**
  * add_stack2 - adds the top two elements of the stack.
- * @head: head of stack
+ * @head: stack head
  * @counter: line_number
  * Return: no return
- */
-void add_stack2(stack_t **head, unsigned int line_counter)
+*/
+void add_stack2(stack_t **head, unsigned int counter)
 {
-	int len = 0;
-	int tmp;
+	stack_t *new_node;
+	int len = 0, tmp;
 
-	/* Check if there are at least two elements in the stack */
-	if (*head == NULL || (*head)->next == NULL)
+	new_node = *head;
+	while (new_node)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", line_counter);
-		fclose(program.file);
-		free(program.line_content);
-		stack_free(*head);
+		new_node = new_node->next;
+		len++;
+	}
+	if (len < 2)
+	{
+		fprintf(stderr, "L%d: can't add, stack too short\n", counter);
+		fclose(bus.file);
+		free(bus.content);
+		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-
-	/* Create a new node to hold the result of the addition */
-	stack_t *new_node = malloc(sizeof(stack_t));
-	if (new_node == NULL)
-	{
-		fprintf(stderr, "Error: malloc failed\n");
-		fclose(program.file);
-		free(program.line_content);
-		stack_free(*head);
-		exit(EXIT_FAILURE);
-	}
-
-	/* Calculate the sum of the top two elements and store it in 'tmp' */
-	tmp = (*head)->n + (*head)->next->n;
-	new_node->n = tmp;
-
-	/* Update the new node's 'next' pointer to point to the element below the top two elements */
-	new_node->next = (*head)->next->next;
-
-	/* Update the stack's head to point to the new node */
-	*head = new_node;
-
-	/* Free the old top two nodes */
-	free((*head)->next->next);
-	free((*head)->next);
+	new_node = *head;
+	tmp = new_node->n + new_node->next->n;
+	new_node->next->n = tmp;
+	*head = new_node->next;
+	free(new_node);
 }
