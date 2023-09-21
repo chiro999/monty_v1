@@ -20,7 +20,7 @@ typedef struct instruction_s
 {
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
-}; instruction_t;
+} instruction_t;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -36,7 +36,7 @@ typedef struct stack_s
         int n;
         struct stack_s *prev;
         struct stack_s *next;
-}; stack_t;
+} stack_t;
 
 /**
  * struct bus_s - variables -args, file, line content
@@ -52,7 +52,7 @@ typedef struct program_s
 	FILE *file;
 	char *line_content;
 	int change_ds;
-};  program_t;
+} program_t;
 extern program_t program;
 
 
