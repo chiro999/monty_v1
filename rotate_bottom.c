@@ -6,7 +6,7 @@
  * @counter: Line number (unused in this function).
  * Return: No return value.
  */
-void rotate_bottom(stack_t **head, __attribute__((unused)) unsigned int counter)
+void rotate_bottom(stack_t **head, __attribute__((unused)) unsigned int line_counter)
 {
 	stack_t *replica;
 
