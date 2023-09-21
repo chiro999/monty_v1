@@ -74,4 +74,8 @@ void _stack(stack_t **head, unsigned int line_counter);
 void stack_free(stack_t *head);
 void sub_stack2(stack_t **head, unsigned int line_counter);
 void _swap(stack_t **head, unsigned int line_counter);
+void rotate_bottom(stack_t **head, __attribute__((unused)) unsigned int line_counter);
+void rotate_top(stack_t **head, __attribute__((unused)) unsigned int line_counter);
+
+#endif
 
