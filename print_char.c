@@ -20,7 +20,7 @@ void print_char(stack_t **head, unsigned int line_counter)
 		stack_free(*head);
 		exit(EXIT_FAILURE);
 	}
-	if (new_node->n > 'DEL' || new_node->n < 'NUL')
+	if (new_node->n > 127 || new_node->n < 0)
 	{
 		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_counter);
 		fclose(program.file);
