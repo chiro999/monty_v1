@@ -16,7 +16,7 @@ void div_stack2(stack_t **head, unsigned int line_counter)
         fprintf(stderr, "L%d: can't div, stack too short\n", line_counter);
         fclose(program.file);
         free(program.line_content);
-        free_stack(*head);
+        stack_free(*head);
         exit(EXIT_FAILURE);
     }
 
@@ -27,7 +27,7 @@ void div_stack2(stack_t **head, unsigned int line_counter)
         fprintf(stderr, "Error: malloc failed\n");
         fclose(program.file);
         free(program.line_content);
-        free_stack(*head);
+        stack_free(*head);
         exit(EXIT_FAILURE);
     }
 
@@ -37,7 +37,7 @@ void div_stack2(stack_t **head, unsigned int line_counter)
         fprintf(stderr, "L%d: division by zero\n", line_counter);
         fclose(program.file);
         free(program.line_content);
-        free_stack(*head);
+        stack_free(*head);
         exit(EXIT_FAILURE);
     }
 
