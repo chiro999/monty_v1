@@ -52,7 +52,7 @@ void _push(stack_t **head, unsigned int line_counter)
 
     /* Check the value of program.change_ds to determine whether to add to the stack or queue */
     if (program.change_ds == 0)
-        addnode(head, n);
+        add_node(head, n);
     else
-        addqueue(head, n);
+        add_queue(head, n);
 }
